@@ -1,0 +1,41 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.label {
+  width:100px;
+  height: 70px;
+  padding: 0.1rem;
+}
+.link {
+  color: #838080;
+  font-weight: bold;
+  &:hover {
+    color:#2F63AA;
+  }
+}
+.container {
+  background-color: white;
+  width: 1280px;
+  margin: 4rem auto 0;
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+}
+.main {
+  background-color: white; ;
+  background-repeat: repeat;
+  height: 100%;
+}
+.grid {
+  margin-bottom: 2rem;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  width: 1280px;
+  margin: 4rem auto 0;
+  padding: 2rem 0 2rem 0;
+  height: 40vh;
+}

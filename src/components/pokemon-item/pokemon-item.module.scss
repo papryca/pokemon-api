@@ -1,0 +1,49 @@
+.pokemon {
+  margin: 20px;
+  background-color: #eeeef6;
+  border: 0.5px solid #838080;
+  color: #838080;
+  font-weight: bold;
+  transition: transform 0.3s ease-out;
+  position: relative;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.like {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+}
+
+.image {
+  border-radius: 50%;
+  background-color: white;
+}
+
+.main {
+  background-color: white;;
+  background-repeat: repeat;
+  height: 100vh;
+}
+
+.pokemons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.remove {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.message {
+  color: #838080;
+  text-align: center;
+  margin-top: 100px;
+}
