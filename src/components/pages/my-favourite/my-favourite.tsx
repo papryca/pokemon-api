@@ -6,7 +6,6 @@ import {IPokemon} from "../../../interfaces/pokemon";
 import styles from '../../pokemon-item/pokemon-item.module.scss'
 import store from "../../../createStore";
 import {deleteLike} from "../../../redux/actions";
-import {ButtonVariant} from "../../../interfaces/button";
 
 const MyFavourite = () => {
   const favorites: IPokemon[] = useSelector(state => state.favorites);

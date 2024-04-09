@@ -74,7 +74,7 @@ const ListItem = ({pokemons}: ListItemProps) => {
               <div>
                 <div className={styles.flex}>
                   <div className={styles.flexName}>
-                    <img src={sprite} className={styles.image}/>
+                    <img src={sprite} className={styles.image} alt='pokemon image'/>
                     <h3>{name}</h3>
                   </div>
                   <div className={styles.flexAbility}>
