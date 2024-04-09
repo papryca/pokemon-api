@@ -1,7 +1,10 @@
 .button {
   border-radius: 10px;
   color: white;
-  margin-left: 40px;
+  margin-left: 4rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 1rem;
+  }
 }
 .button.contained {
   background-color: #2F63AA;

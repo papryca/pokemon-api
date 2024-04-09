@@ -5,7 +5,7 @@ import React from "react";
 const Input:React.FC<IInput> = ({value, setValue}) => {
   const history: string[] = JSON.parse(localStorage.getItem('history') || '[]');
   return (
-    <div>
+    <div className={styles.container}>
       <input
         type='text'
         placeholder="Search..."

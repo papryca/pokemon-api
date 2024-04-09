@@ -15,7 +15,7 @@ interface PokemonProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 
 const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
   const favorites: IPokemon[] = useSelector(state => state.favorites);
-  const { request } = useHttp();
+  const {request} = useHttp();
 
   const [pokemons, setPokemons] = useState<string | null>(null);
   useEffect(() => {
@@ -25,7 +25,7 @@ const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
           url ?? '',
           'GET',
           null,
-          { 'Content-Type': 'application/json' }
+          {'Content-Type': 'application/json'}
         );
         setPokemons(data.sprites.front_default);
       } catch (error) {
@@ -37,13 +37,12 @@ const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
   }, [url]);
 
 
-  const handleFavoriteClick = (isFavorite:boolean) => {
-    if (isFavorite){
-      store.dispatch(add({ name, pokemons, isFavorite:true }))
-    }else {
-      store.dispatch(deleteLike({ name, pokemons, isFavorite:false }))
+  const handleFavoriteClick = (isFavorite: boolean) => {
+    if (isFavorite) {
+      store.dispatch(add({name, pokemons, isFavorite: true}))
+    } else {
+      store.dispatch(deleteLike({name, pokemons, isFavorite: false}))
     }
-
   };
 
   return (
@@ -52,13 +51,13 @@ const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
       <div>
         {!favorites.find((item) => item.name === name) ? (
           <FavoriteTwoToneIcon
-            style={{ color: 'gray' }}
+            style={{color: 'gray'}}
             onClick={() => handleFavoriteClick(true)}
             className={styles.like}
           />
         ) : (
           <FavoriteTwoToneIcon
-            style={{ color: '#D0644B' }}
+            style={{color: '#D0644B'}}
             onClick={() => handleFavoriteClick(false)}
             className={styles.like}
           />

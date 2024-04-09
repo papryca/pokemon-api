@@ -5,7 +5,6 @@ import {useEffect, useState} from "react";
 import styles from "./home.module.scss";
 import {IPokemon} from "../../../interfaces/pokemon";
 import {useParams} from "react-router-dom";
-import {getPokemons, Response} from "../../servises/getPockemons";
 import ItemPerPage from "../../item-per-page/item-per-page";
 import {useHttp} from "../../servises/http-hook";
 import {ButtonVariant} from "../../../interfaces/button";
@@ -38,7 +37,6 @@ const Home = () => {
     let quantity: number = 0;
 
     const input = inputValue.trim();
-
     try {
       let limit = pokemonsOnThePage;
       if (input !== "") {
@@ -97,7 +95,9 @@ const Home = () => {
       <Header/>
       <div className={styles.container}>
         <div className={styles.search}>
-          <Input value={inputValue} setValue={setInputValue}></Input>
+          <div className={styles.firstItem}>
+            <Input value={inputValue} setValue={setInputValue}></Input>
+          </div>
           <Button children='Search' onClick={update}/>
           <Button children='Reset' onClick={handleReset}/>
           <ItemPerPage onChange={(value) => {

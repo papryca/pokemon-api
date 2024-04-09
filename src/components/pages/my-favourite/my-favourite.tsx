@@ -6,6 +6,7 @@ import {IPokemon} from "../../../interfaces/pokemon";
 import styles from '../../pokemon-item/pokemon-item.module.scss'
 import store from "../../../createStore";
 import {deleteLike} from "../../../redux/actions";
+import {ButtonVariant} from "../../../interfaces/button";
 
 const MyFavourite = () => {
   const favorites: IPokemon[] = useSelector(state => state.favorites);
@@ -19,7 +20,7 @@ const MyFavourite = () => {
       {favorites.length === 0 ? (
         <p className={styles.message}>No favorite Pokémons yet!</p>
       ) : (
-        <div className={styles.pokemons}>
+        <div className={styles.favouritePokemons}>
           {favorites.map((item, index) => (
             <div className={styles.pokemon} key={index}>
               <div>

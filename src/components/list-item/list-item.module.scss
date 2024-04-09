@@ -3,6 +3,19 @@
   grid-template-columns: repeat(5,1fr);
   width: 100%;
   margin: 0 auto;
+
+  @media screen and (max-width: 1439px) {
+    grid-template-columns: repeat(4,1fr);
+  }
+  @media screen and (max-width: 1036px) {
+    grid-template-columns: repeat(3,1fr);
+  }
+  @media screen and (max-width: 750px) {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1,1fr);
+  }
 }
 .modal {
   display: flex;
@@ -16,24 +29,84 @@
   font-weight: bold;
 }
 .container {
-  background-color: #FBFBEA;
+  background-color: #eeeef6;
   border-radius: 2px;
-  width: 20%;
-  height: 45%;
+  width: 40%;
+  height: fit-content;
   color:  #838080;
-  font-size: 24px;
+  font-size: 1.4rem;
   padding: 30px;
   box-shadow: 0 0 25px 0 #838080;
   border: 2px solid #646161;
+  @media screen and (max-width: 1036px) {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 750px) {
+    font-size: 1rem;
+  }
 }
 .cross {
   cursor: pointer;
   display: flex;
   justify-content: end;
   transition: background-color 0.3s;
+  padding-bottom: 2rem;
 }
 .close {
   &:hover {
     background-color: #1C2C5C;
+  }
+}
+.image {
+  border-radius: 50%;
+  background-color: white;
+  @media screen and (max-width: 750px) {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+.flex {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  @media screen and (max-width: 1036px) {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+.flexName {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  @media screen and (max-width: 750px) {
+    gap: 1rem;
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+.flexAbility {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 4rem;
+  @media screen and (max-width: 1439px) {
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 2rem;
+  }
+}
+.type {
+  border-radius: 2px;
+  margin: 0.3rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  @media screen and (max-width: 1439px) {
+    margin: 0;
+    padding: 0.3rem;
   }
 }
