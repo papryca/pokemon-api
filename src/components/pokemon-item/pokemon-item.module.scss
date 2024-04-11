@@ -1,7 +1,7 @@
 .pokemon {
-  margin: 20px;
+  margin: 2rem;
   background-color: #eeeef6;
-  border: 0.5px solid #838080;
+  border: 0.05rem solid #838080;
   color: #838080;
   font-weight: bold;
   transition: transform 0.3s ease-out;
@@ -15,8 +15,8 @@
 
 .like {
   position: absolute;
-  top: 25px;
-  right: 40px;
+  top: 2.5rem;
+  right: 4rem;
 }
 
 .image {
@@ -41,7 +41,7 @@
   grid-template-columns: repeat(4, 1fr);
   width: 80%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 3rem;
   max-width: 1280px;
   @media screen and (max-width: 1439px) {
     grid-template-columns: repeat(3,1fr);
@@ -55,7 +55,7 @@
 }
 
 .remove {
-  font-size: 16px;
+  font-size: 1.6rem;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -63,5 +63,5 @@
 .message {
   color: #838080;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10rem;
 }
