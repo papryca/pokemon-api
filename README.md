@@ -59,3 +59,6 @@ The application will open in your default browser, allowing you to explore and i
 ### `Screenshot`
 
 ![docs/page1.png](docs/page1.png)
+![docs/page2.png](docs/page2.png)
+![docs/page3.png](docs/page3.png)
+![docs/page4.png](docs/page4.png)
