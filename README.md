@@ -1,27 +1,61 @@
-# React + TypeScript + Vite
+# Pokemon searcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Vite
 
-Currently, two official plugins are available:
+## 📝 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Introduction:
+- "Pokemon Searcher" is an interactive platform designed for Pokemon enthusiasts, providing the ability to explore and manage their favorite Pokemon.
+- The platform consists of two main pages, offering easy access to a vast array of Pokemon and management of the user's own collection.
+- The platform utilizes a public API to fetch Pokemon data.
 
-## Expanding the ESLint configuration
+### 🎮 Functionality:
+First Page:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Users can browse through an extensive list of Pokemon.
+- Search by Pokemon name enables quick discovery of specific creatures.
+- Pagination customization allows users to control the number of Pokemon displayed per page.
+- Each Pokemon card features a "Learn More" button, providing additional information about the selected Pokemon.
+- Clickable heart icon: A clickable heart icon is present on each Pokemon card, allowing users to add or remove Pokemon from their collection. When clicked, the heart icon toggles between red (indicating that the Pokemon is added to the collection) and gray (indicating that the Pokemon is removed from the collection).
 
-- Configure the top-level `parserOptions` property like this:
+Second Page:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Here, users can manage their collection of favorite Pokemon.
+- The ability to remove a Pokemon from the favorites list, providing curation and organization of the collection.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🛠️ Technology Stack
+
+- React
+- HTML
+- CSS (with SASS)
+- TypeScript
+- Redux
+- Material UI
+
+## 📜 Available Scripts
+
+In the project directory, you can run:
+
+### `npm start` ▶️
+
+Runs the app in the development mode.\
+Open [http://localhost:3000/](http://localhost:3000/) to view it in the browser.
+
+### `testing deployment` ▶️
+
+Open [https://precious-mochi-becaaa.netlify.app/](https://illustrious-lily-e1e57a.netlify.app/) to view it in the browser.
+
+## 🚀 Getting Started
+
+To set up and run the project locally, follow these steps:
+
+1. Clone the repository: `git@github.com:papryca/pokemon-api.git`
+2. Navigate to the project directory: `cd pokemon-searcher`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+
+The application will open in your default browser, allowing you to explore and interact with it.
+
+### `Screenshot`
+
+![docs/page1.png](docs/page1.png)
