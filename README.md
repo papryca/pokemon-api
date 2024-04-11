@@ -1,16 +1,36 @@
 # Pokemon searcher
 
+React + TypeScript + Vite
+
 ## 📝 Description
 
-This dashboard is designed for families to track their medical appointments, monitor their medical expenses, and receive reminders to stay informed and organized. Users can conveniently compare their expenditures over time, manage upcoming appointments, and set reminders to ensure they stay up-to-date and never miss important events.
+ Introduction:
+- "Pokemon Searcher" is an interactive platform designed for Pokemon enthusiasts, providing the ability to explore and manage their favorite Pokemon.
+- The platform consists of two main pages, offering easy access to a vast array of Pokemon and management of the user's own collection.
+- The platform utilizes a public API to fetch Pokemon data.
+
+### 🎮 Functionality:
+First Page:
+
+- Users can browse through an extensive list of Pokemon.
+- Search by Pokemon name enables quick discovery of specific creatures.
+- Pagination customization allows users to control the number of Pokemon displayed per page.
+- Each Pokemon card features a "Learn More" button, providing additional information about the selected Pokemon.
+- Clickable heart icon: A clickable heart icon is present on each Pokemon card, allowing users to add or remove Pokemon from their collection. When clicked, the heart icon toggles between red (indicating that the Pokemon is added to the collection) and gray (indicating that the Pokemon is removed from the collection).
+
+Second Page:
+
+- Here, users can manage their collection of favorite Pokemon.
+- The ability to remove a Pokemon from the favorites list, providing curation and organization of the collection.
 
 ## 🛠️ Technology Stack
 
 - React
 - HTML
-- CSS
+- CSS (with SASS)
 - TypeScript 
-- Tailwind
+- Redux
+- Material UI
 
 ## 📜 Available Scripts
 
