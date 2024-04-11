@@ -52,9 +52,10 @@ const Home = () => {
       totalLength = response.count;
 
       if (input !== "") {
-        pokemons = pokemons.filter(
-          (pokemon: IPokemon) => pokemon.name.includes(input.toLowerCase())
-        )
+        pokemons = pokemons.filter((pokemon: IPokemon)=>{
+          return pokemon.name && pokemon.name.toLowerCase().includes(input.toLowerCase());
+        })
+
         totalLength = pokemons.length;
         pokemons = pokemons.slice(offset, pageValue * pokemonsOnThePage);
 

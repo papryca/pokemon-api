@@ -1,6 +1,7 @@
 export interface IPokemon{
-  name: string,
+  name?: string,
+  id?:string,
   url? : string,
-  pokemons? : string | null,
+  pokemons : string | null,
   isFavorite? : boolean
 }

@@ -5,13 +5,14 @@ import Button from "../../button/button";
 import {IPokemon} from "../../../interfaces/pokemon";
 import styles from '../../pokemon-item/pokemon-item.module.scss'
 import store from "../../../createStore";
-import {deleteLike} from "../../../redux/actions";
+import {selectFavorites} from "../../../redux/rootReducer.ts";
+import { removeFavorite } from "../../../redux/rootReducer.ts";
 
 const MyFavourite = () => {
-  const favorites: IPokemon[] = useSelector(state => state.favorites);
-  const handleRemove = (item: IPokemon) => (
-    store.dispatch(deleteLike(item))
-  )
+  const favorites: IPokemon[] = useSelector(selectFavorites);
+  const handleRemove = (pokemons:string|null) => {
+    store.dispatch(removeFavorite({pokemons}))
+  }
 
   return (
     <div className={styles.main}>
@@ -33,7 +34,7 @@ const MyFavourite = () => {
                 </div>
                 <Button style={{margin: '5px'}}>Learn More</Button>
               </div>
-              <p className={styles.remove} onClick={() => handleRemove(item)}>Remove</p>
+              <p className={styles.remove} onClick={() => handleRemove(item.pokemons)}>Remove</p>
             </div>
           ))}
         </div>

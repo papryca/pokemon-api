@@ -35,7 +35,7 @@ const ListItem = ({pokemons}: ListItemProps) => {
       setName(params.name);
       setSprite(result.sprites.front_default)
       const pokemonInfo = await request(`https://pokeapi.co/api/v2/pokemon/${params.name}`, "GET");
-      const types = pokemonInfo.types.map(type => type.type.name);
+      const types = pokemonInfo.types.map((type: { type: { name: string } }) => type.type.name);
       setTypes(types);
       console.log(types);
     } catch (error) {
@@ -50,9 +50,9 @@ const ListItem = ({pokemons}: ListItemProps) => {
     <>
       <div className={styles.pokemons}>
         {pokemons.map((pokemon, index) => (
-          <Item key={index} {...pokemon} onClick={() => openModal({
-            url: pokemon.url || "",
-            name: pokemon.name
+          <Item key={index} {...pokemon} id={pokemon.id ?? ""} name={pokemon.name ?? ""} url={pokemon.url ?? ""}  onClick={() => openModal({
+            url: pokemon.url ?? "",
+            name: pokemon.name?? ""
           })}/>
         ))}
       </div>
@@ -88,7 +88,7 @@ const ListItem = ({pokemons}: ListItemProps) => {
                 <div className={styles.flex}>
                   <div>
                     <p className={styles.abilities}>Abilities: </p>
-                    {abilityName.map((value, index) => (
+                    {abilityName.map((value: { ability: { name: string } }, index) => (
                       <div key={index}>- {value.ability.name}</div>
                     ))}
                   </div>
@@ -100,7 +100,6 @@ const ListItem = ({pokemons}: ListItemProps) => {
                     <p className={styles.abilities}>Weight: </p>
                     <span>- {weight}</span>
                   </div>
-
                 </div>
               </div>
             </div>

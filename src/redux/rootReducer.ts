@@ -1,30 +1,36 @@
-import {Action, combineReducers} from "redux";
-import {ADD,DELETE} from "./types";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {RootState} from "../createStore.ts";
+import {IPokemon} from "../interfaces/pokemon.ts";
 
-function counterReducer(state=0, action:Action) {
-    if (action.type ===  ADD){
-        return state + 1
-    }else if (action.type ===  DELETE) {
-        return state - 1
-    }
-    return state
 
+interface PokemonState {
+    counter: number;
+    favorites: IPokemon[];
 }
 
-function favoritesReducer(state = [], action:Action) {
-    switch (action.type) {
-        case ADD:
-            console.log(action);
-            return [...state, action.payload];
-        case DELETE:
-            return state.filter((pokemon) => pokemon.pokemons !== action.payload.pokemons);
-        default:
-            return state;
-    }
-}
-export const rootReducer = combineReducers({
-    counter: counterReducer,
-    favorites: favoritesReducer,
+const initialPokemonState: PokemonState = {
+    counter: 0,
+    favorites: [],
+};
+
+const pokemonSlice = createSlice({
+    name: 'pokemon',
+    initialState: initialPokemonState,
+    reducers: {
+        addFavorite(state, action: PayloadAction<IPokemon>) {
+            state.favorites.push(action.payload);
+            state.counter += 1;
+        },
+        removeFavorite(state, action: PayloadAction<IPokemon>) {
+            state.favorites = state.favorites.filter(pokemon => pokemon.pokemons !== action.payload.pokemons);
+            state.counter -= 1;
+        },
+    },
 });
 
+export const { addFavorite, removeFavorite } = pokemonSlice.actions;
+export const selectCount = (state: RootState) => state.pokemon.counter;
+export const selectFavorites = (state: RootState) => state.pokemon.favorites;
+
+export default pokemonSlice.reducer
 

@@ -3,18 +3,21 @@ import styles from './pokemon-item.module.scss'
 import Button from "../button/button";
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import store from '../../createStore'
-import {add, deleteLike} from "../../redux/actions";
 import {IPokemon} from "../../interfaces/pokemon";
 import {useSelector} from "react-redux";
 import useHttp from "../servises/http-hook";
+import { selectFavorites} from "../../redux/rootReducer";
+import {addFavorite, removeFavorite } from "../../redux/rootReducer.ts";
 
-interface PokemonProps extends React.BaseHTMLAttributes<HTMLDivElement> {
+interface PokemonProps extends React.BaseHTMLAttributes<HTMLButtonElement> {
+  id:string;
   name: string;
   url: string;
 }
 
-const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
-  const favorites: IPokemon[] = useSelector(state => state.favorites);
+const Item: React.FC<PokemonProps> = ({id,name, url, ...props}) => {
+  const favorites: IPokemon[] = useSelector(selectFavorites);
+  console.log(favorites)
   const {request} = useHttp();
 
   const [pokemons, setPokemons] = useState<string | null>(null);
@@ -39,9 +42,10 @@ const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
 
   const handleFavoriteClick = (isFavorite: boolean) => {
     if (isFavorite) {
-      store.dispatch(add({name, pokemons, isFavorite: true}))
+      store.dispatch(addFavorite({id,name, pokemons, isFavorite: true}))
     } else {
-      store.dispatch(deleteLike({name, pokemons, isFavorite: false}))
+      console.log(pokemons)
+      store.dispatch(removeFavorite({pokemons}))
     }
   };
 
@@ -49,7 +53,7 @@ const Item: React.FC<PokemonProps> = ({name, url, ...props}) => {
     <div className={styles.pokemon}>
       <div>{name}</div>
       <div>
-        {!favorites.find((item) => item.name === name) ? (
+        {Array.isArray(favorites) && !favorites.find((item) => item.name === name) ? (
           <FavoriteTwoToneIcon
             style={{color: 'gray'}}
             onClick={() => handleFavoriteClick(true)}

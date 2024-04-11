@@ -5,9 +5,10 @@ import styles from "../pages/home/home.module.scss";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import { selectCount } from "../../redux/rootReducer";
 
 const Header = () => {
-  const num = useSelector((state) => state.counter);
+  const num = useSelector(selectCount);
   return (
     <Box sx={{flexGrow: 1}}>
       <AppBar position="static" sx={{backgroundColor: '#fff'}}>
@@ -17,12 +18,10 @@ const Header = () => {
               <img src={pokemon} className={styles.label} alt="Pokemon label"/>
             </Box>
           </Link>
-          <Typography variant="h6" component="div" color="primary" sx={{fontWeight: 'bold', paddingRight:'2rem'}}>
+          <Typography variant="h6" component="div" color="primary" sx={{fontWeight: 'bold', paddingRight:'2.5rem'}}>
             <Link to="/myFavourite" className={styles.link}>My Favourite</Link>
             <Badge badgeContent={String(num)} color="secondary">
-              <Link to="/myFavourite" className={styles.link}>
-                <FavoriteIcon color="primary"/>
-              </Link>
+                <FavoriteIcon color="primary" fontSize="large"/>
             </Badge>
           </Typography>
         </Toolbar>
