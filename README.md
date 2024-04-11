@@ -43,7 +43,7 @@ Open [http://localhost:3000/](http://localhost:3000/) to view it in the browser.
 
 ### `testing deployment` ▶️
 
-Open [https://precious-mochi-becaaa.netlify.app/]([https://precious-mochi-becaaa.netlify.app/](https://illustrious-lily-e1e57a.netlify.app/)) to view it in the browser.
+Open [https://precious-mochi-becaaa.netlify.app/](https://illustrious-lily-e1e57a.netlify.app/) to view it in the browser.
 
 ## 🚀 Getting Started
 
