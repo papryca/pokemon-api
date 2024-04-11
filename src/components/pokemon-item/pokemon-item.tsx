@@ -58,12 +58,14 @@ const Item: React.FC<PokemonProps> = ({id,name, url, ...props}) => {
             style={{color: 'gray'}}
             onClick={() => handleFavoriteClick(true)}
             className={styles.like}
+            fontSize={"large"}
           />
         ) : (
           <FavoriteTwoToneIcon
             style={{color: '#D0644B'}}
             onClick={() => handleFavoriteClick(false)}
             className={styles.like}
+            fontSize={"large"}
           />
         )}
         <img src={pokemons ?? ''} alt={`Image of ${name}`} className={styles.image}/>

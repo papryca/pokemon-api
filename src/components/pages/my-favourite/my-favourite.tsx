@@ -29,6 +29,7 @@ const MyFavourite = () => {
                   <FavoriteTwoToneIcon
                     style={{color: '#D0644B'}}
                     className={styles.like}
+                    fontSize={"large"}
                   />
                   <img src={item.pokemons ?? ''} alt={`Image of ${item.name}`} className={styles.image}/>
                 </div>
