@@ -32,7 +32,7 @@ const MyFavourite = () => {
                   />
                   <img src={item.pokemons ?? ''} alt={`Image of ${item.name}`} className={styles.image}/>
                 </div>
-                <Button style={{margin: '5px'}}>Learn More</Button>
+                <Button style={{margin: '0.5rem'}}>Learn More</Button>
               </div>
               <p className={styles.remove} onClick={() => handleRemove(item.pokemons)}>Remove</p>
             </div>

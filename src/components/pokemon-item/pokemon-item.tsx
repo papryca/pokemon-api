@@ -68,7 +68,7 @@ const Item: React.FC<PokemonProps> = ({id,name, url, ...props}) => {
         )}
         <img src={pokemons ?? ''} alt={`Image of ${name}`} className={styles.image}/>
       </div>
-      <Button style={{margin: '5px'}} children='Learn More' onClick={props.onClick}/>
+      <Button style={{margin: '0.5rem'}} children='Learn More' onClick={props.onClick}/>
     </div>
   );
 }
