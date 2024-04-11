@@ -1,13 +1,14 @@
+@import "../../abstaracts/_constant.scss";
 .button {
   border-radius: 1rem;
-  color: white;
+  color: $color-primary;
   margin-left: 4rem;
   @media screen and (max-width: 768px) {
     margin-left: 1rem;
   }
 }
 .button.contained {
-  background-color: #2F63AA;
+  background-color: $color-button;
   cursor: pointer;
   border: none;
   padding: 1rem 2rem;
@@ -15,42 +16,42 @@
 .button.round {
   border-radius: 50%;
   height: 4.5rem;
-  background-color:  #2F63AA;
+  background-color:  $color-button;
   border: none;
 }
 .button.round:disabled {
-  background-color: #ccc;
-  color: #999;
+  background-color: $color-background-disabled;
+  color: $color-text;
   cursor: not-allowed;
   &:hover{
-    background-color: #ccc;
+    background-color: $color-background-disabled;
   }
 }
 .button.round:hover  {
   border-radius: 50%;
   height: 4.5rem;
-  background-color: #1C2C5C;
+  background-color: $color-button-hover;
 }
 .button.contained:hover {
-  background-color: #1C2C5C;
+  background-color: $color-button-hover;
 }
 .button.outlined {
   background-color: transparent;
-  border: 0.2rem solid #b392ac;
+  border: 0.2rem solid $color-button-border;
   cursor: pointer;
   padding: 0.8rem 1.8rem;
 }
 .button.outlined:hover {
-  background-color: #827FB2;
+  background-color: $color-button-outlined-hover;
 }
 .button.outlined:disabled {
-  background-color: #ccc;
-  color: #999;
-  border: 0.2rem solid #999;
+  background-color: $color-background-disabled;
+  color: $color-text;
+  border: 0.2rem solid $color-text;
   cursor: not-allowed;
 }
 .button.contained:disabled {
-  background-color: #ccc;
-  color: #999;
+  background-color: $color-background-disabled;
+  color: $color-text;
   cursor: not-allowed;
 }

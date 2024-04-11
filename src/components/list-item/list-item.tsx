@@ -1,8 +1,7 @@
 import Item from "../pokemon-item/pokemon-item";
 import styles from './list-item.module.scss'
 import {IPokemon} from "../../interfaces/pokemon";
-import {Modal} from "@mui/material";
-import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
+import ModalComponent from '../modal/modal.tsx'
 import {useState} from "react";
 import useHttp from "../servises/http-hook";
 
@@ -57,53 +56,37 @@ const ListItem = ({pokemons}: ListItemProps) => {
         ))}
       </div>
       <div>
-          <Modal
-            open={isModalOpen}
-            onClose={closeModal}
-            className={styles.modal}
-          >
-            <div className={styles.container}>
-              <div className={styles.cross}>
-                <CloseTwoToneIcon
-                  fontSize="large"
-                  className={styles.close}
-                  onClick={closeModal}
-                />
-              </div>
-
-              <div>
-                <div className={styles.flex}>
-                  <div className={styles.flexName}>
-                    <img src={sprite} className={styles.image} alt='pokemon image'/>
-                    <h3>{name}</h3>
-                  </div>
-                  <div className={styles.flexAbility}>
-                    {types.map((type, index) => (
-                      <div key={index} style={{ backgroundColor: type === 'grass' ? '#a6f5a6' : type === 'poison' ? '#deb7be' : type === 'fire' ? "#f1b23d" : type === 'water' ? "#7070ef" : type === 'bug' ? "#c25959":  type === 'flying' ? "#a27aa2": type === 'normal' ? "rgba(197, 126, 63, 0.3)": type === 'electric' ? "#dcdc77": type === 'fairy' ? "#e368e3":"#232121" }} className={styles.type}>
-                        {type}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className={styles.flex}>
-                  <div>
-                    <p className={styles.abilities}>Abilities: </p>
-                    {abilityName.map((value: { ability: { name: string } }, index) => (
-                      <div key={index}>- {value.ability.name}</div>
-                    ))}
-                  </div>
-                  <div>
-                    <p className={styles.abilities}>Height: </p>
-                    <span>- {height}</span>
-                  </div>
-                  <div>
-                    <p className={styles.abilities}>Weight: </p>
-                    <span>- {weight}</span>
-                  </div>
-                </div>
-              </div>
+        <ModalComponent isOpen={isModalOpen} onClose={closeModal}>
+          <div className={styles.flex}>
+            <div className={styles.flexName}>
+              <img src={sprite} className={styles.image} alt='pokemon image'/>
+              <h3>{name}</h3>
             </div>
-          </Modal>
+            <div className={styles.flexAbility}>
+              {types.map((type, index) => (
+                <div key={index} style={{ backgroundColor: type === 'grass' ? '#a6f5a6' : type === 'poison' ? '#deb7be' : type === 'fire' ? "#f1b23d" : type === 'water' ? "#7070ef" : type === 'bug' ? "#c25959":  type === 'flying' ? "#a27aa2": type === 'normal' ? "rgba(197, 126, 63, 0.3)": type === 'electric' ? "#dcdc77": type === 'fairy' ? "#e368e3":"#232121" }} className={styles.type}>
+                  {type}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={styles.flex}>
+            <div>
+              <p className={styles.abilities}>Abilities: </p>
+              {abilityName.map((value: { ability: { name: string } }, index) => (
+                <div key={index}>- {value.ability.name}</div>
+              ))}
+            </div>
+            <div>
+              <p className={styles.abilities}>Height: </p>
+              <span>- {height}</span>
+            </div>
+            <div>
+              <p className={styles.abilities}>Weight: </p>
+              <span>- {weight}</span>
+            </div>
+          </div>
+        </ModalComponent>
       </div>
     </>
   );

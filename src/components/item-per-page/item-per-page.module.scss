@@ -1,11 +1,12 @@
+@import "../../abstaracts/_constant.scss";
 .item {
   margin-left: 6rem;
-  color: #838080;
+  color: $color-text-secondary;
   font-weight: bold;
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }
 }
 .select {
-  background-color: #838080;
+  background-color: $color-text-secondary;
 }

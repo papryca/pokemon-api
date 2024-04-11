@@ -1,8 +1,9 @@
+@import "../../abstaracts/_constant.scss";
 .pokemon {
   margin: 2rem;
-  background-color: #eeeef6;
-  border: 0.05rem solid #838080;
-  color: #838080;
+  background-color: $color-background;
+  border: 0.05rem solid $color-text-secondary;
+  color: $color-text-secondary;
   font-weight: bold;
   transition: transform 0.3s ease-out;
   position: relative;
@@ -21,11 +22,11 @@
 
 .image {
   border-radius: 50%;
-  background-color: white;
+  background-color: $color-primary;
 }
 
 .main {
-  background-color: white;;
+  background-color: $color-primary;
   background-repeat: repeat;
   height: 100vh;
 }
@@ -61,7 +62,7 @@
 }
 
 .message {
-  color: #838080;
+  color: $color-text-secondary;
   text-align: center;
   margin-top: 10rem;
 }

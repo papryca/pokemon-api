@@ -1,10 +1,11 @@
+@import "../../abstaracts/_constant.scss";
 .pokemon {
   position: relative;
   height: 10rem;
   width: 10rem;
-  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50% );
+  background: linear-gradient(to bottom, $color-loader-red, $color-primary 50% );
   border-radius: 50%;
-  border: 0.8rem solid black;
+  border: 0.8rem solid $color-loader-black;
   animation: spin 1s linear infinite;
 }
 
@@ -13,7 +14,7 @@
   position: absolute;
   height: 0.8rem;
   width: 10rem;
-  background: black;
+  background: $color-loader-black;
   top: 5rem;
   right: 0;
   transform: translatey(-50%);
@@ -25,11 +26,11 @@
   height: 3.8rem;
   width: 3.8rem;
   border-radius: 50%;
-  background: white;
+  background: $color-primary;
   top: 5rem;
   left: 5rem;
   transform: translate(-50%, -50%);
-  box-shadow: inset 0 0 0 0.8rem black, inset 0 0 0 1rem white, inset 0 0 0 1.2rem black;
+  box-shadow: inset 0 0 0 0.8rem $color-loader-black, inset 0 0 0 1rem $color-primary, inset 0 0 0 1.2rem $color-loader-black;
 
 }
 

@@ -1,3 +1,4 @@
+@import "../../../abstaracts/_constant.scss";
 .search {
   display: flex;
   align-items: center;
@@ -22,17 +23,17 @@
 }
 
 .link {
-  color: #838080;
+  color: $color-text-secondary;
   font-weight: bold;
   font-size: 2rem;
   padding-right: 1rem;
   &:hover {
-    color: #2F63AA;
+    color: $color-button;
   }
 }
 
 .container {
-  background-color: white;
+  background-color: $color-primary;
   max-width: 1280px;
   margin: 6rem auto 2rem auto;
   padding: 1.6rem 0 3.2rem 0;
@@ -40,7 +41,7 @@
 }
 
 .main {
-  background-color: white;;
+  background-color: $color-primary;;
   background-repeat: repeat;
   min-height: 100vh;
 }
